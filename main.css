@@ -1,0 +1,14 @@
+:root {
+    /* CSS variable */
+    --text-color: #84a65b;
+}
+
+* {
+    /* all elements  */
+    color: var(--text-color);
+}
+
+h1 {
+    --text-color: #fff;
+    color: var(--text-color);
+}

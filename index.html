@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML-CSS</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <style>
+        html {
+            font-size: 16px;
+            background-image: linear-gradient(0, #fff, #f3eed0)
+        }
+        
+         ::selection {
+            color: #fff;
+            background-color: violet;
+        }
+        
+        header {
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 5px dashed #ccc;
+            background-clip: padding-box;
+            background-image: url(assets/header.png);
+            background-size: 15%;
+        }
+        
+        header:hover {
+            background-color: #f69797;
+        }
+        
+        .background {
+            position: relative;
+        }
+        
+        .background::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: -1;
+            background-image: url(assets/body.png);
+            background-size: 500px;
+        }
+        
+        h1 {
+            /* tagname  */
+            color: #fff;
+        }
+        
+        #Tags {
+            /* id */
+            color: #8a8cb5;
+        }
+        
+        .CSS {
+            /* class */
+            color: #8a8cb5;
+        }
+        
+        li#css-priority.important {
+            color: #db5252;
+        }
+        
+        .important {
+            color: #db5252;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* float: left; */
+        }
+        
+        .box1 {
+            background-color: firebrick;
+        }
+        
+        .box2 {
+            background-color: orange;
+            padding: 10px;
+            border: 5px dashed black;
+            margin: 10px;
+        }
+        
+        .box3 {
+            background-color: darkorchid;
+            padding: 10px;
+            border: 5px;
+            box-sizing: border-box;
+        }
+        
+        .box3::after {
+            content: attr(data);
+        }
+        
+        @keyframes growth {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        #flex-box {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        @media (min-width: 768px) {
+            #flex-box {
+                flex-direction: row;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>
+                HTML - Hypertext Markup Language - Tạo và cấu trúc các thành phần.
+            </h1>
+            <h1>CSS - Casading Style Sheet language- Tạo phong cách và định kiểu.</h1>
+        </header>
+    </div>
+    <div class="background">
+        <div>
+            <h2 id=" Tags ">Tags:</h2>
+            <ul>
+                <li>h1-h6: heading</li>
+                <li>p: paragraph</li>
+                <li>img: image, att: alt</li>
+                <li>a: anchor, hyperlink, att: href</li>
+                <li>ol: ordered list, ul: unordered list, li: list item</li>
+                <li>table, thead, tbody, th: table heading, tr: table row, td: table cell</li>
+                <li>input, att: type</li>
+                <li>button</li>
+                <li>div: division</li>
+                </u>
+        </div>
+        <hr>
+        <div>
+            <p>
+                <h2 class="CSS ">CSS</h2>
+                <ol>
+                    <li>Internal: style tag</li>
+                    <li>External: link tag</li>
+                    <li>Inline: style att</li>
+                </ol>
+            </p>
+            <p>
+                <h2 style="color: #8a8cb5 ">CSS Priority</h2>
+                <ol>
+                    <li>tag</li>
+                    <li>.class</li>
+                    <li>#id</li>
+                    <li>Inline</li>
+                    <li id="css-priority " class="important ">!important</li>
+                </ol>
+            </p>
+            <p>
+                <h2>CSS Units</h2>
+                <ol>
+                    <li>Absolute Units
+                        <ul>
+                            <li class="important ">px: pixels</li>
+                            <li>pt</li>
+                            <li>cm</li>
+                            <li>mm</li>
+                            <li>inch</li>
+                            <li>pc</li>
+                        </ul>
+                    </li>
+                    <li>Relative units
+                        <ul style="font-size: 20px ">
+                            <li class="important ">%: Relative to the parent element</li>
+                            <li class="important " style="font-size: 2rem ">rem: Relative to font-size of the root element</li>
+                            <li class="important " style="font-size: 2em ">em: Relative to the font-size of the element (2em means 2 times the size of the current font)</li>
+                            <li class="important ">vw: Relative to 1% of the width of the viewport</li>
+                            <li class="important ">vh: Relative to 1% of the height of the viewport</li>
+                            <li>vmin</li>
+                            <li>vmax</li>
+                            <li>ex</li>
+                            <li>ch</li>
+                        </ul>
+                    </li>
+                </ol>
+            </p>
+        </div>
+        <hr>
+        <div>
+            <h2>Padding, Border, Margin</h2>
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3" data="Đây là nội dung"> </div>
+        </div>
+        <hr>
+        <div>
+            <h2>CSS Functions</h2>
+            <ul>
+                <li>var()</li>
+                <li>linear-gradient()</li>
+                <li>rgba()</li>
+                <li>rgb()</li>
+                <li>calc(80% + 20px)</li>
+                <li>attr()</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h2>
+                CSS Pseudo-classes
+            </h2>
+            <ul>
+                <li>:root</li>
+                <li>:hover</li>
+                <li>:active</li>
+                <li>:first-child</li>
+                <li>:last-child</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h2>
+                CSS Pseudo-elements
+            </h2>
+            <ul>
+                <li>::before</li>
+                <li>::after</li>
+                <li>::first-letter</li>
+                <li>::first-line</li>
+                <li>::selection</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h2>
+                CSS Position
+            </h2>
+            <ul>
+                <li>Relative: relative to its normal position</li>
+                <li>Absolute: relative to the nearest positioned ancestors</li>
+                <li>Fixed: relative to the viewport, always stays in the same place even if the page is scrolled</li>
+                <li>Sticky: based on the user's scroll position</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h2>
+                CSS-Layout Flexbox
+            </h2>
+            <div id="flex-box">
+                <div style="flex-basis: 20%;">
+                    <ul>
+                        <li>display</li>
+                        <li>flex-direction</li>
+                        <li>flex-wrap</li>
+                        <li>flex-basis</li>
+                        <li>justify-content</li>
+                        <li>justify-self</li>
+                        <li>align-content</li>
+                        <li>align-self</li>
+                        <li>flex-grow</li>
+                        <li>flex-shrink</li>
+                        <li>flex-flow</li>
+                        <li>flex</li>
+                        <li>order</li>
+                    </ul>
+                </div>
+                <div style="flex-basis: 70%; animation: growth ease-in 1s;">
+                    <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox/flex_terms.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
