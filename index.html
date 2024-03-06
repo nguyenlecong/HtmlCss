@@ -138,6 +138,10 @@
         tr:nth-child(even) {
             background-color: rgba(220, 220, 220, 0.5);
         }
+        
+        .red {
+            color: firebrick
+        }
     </style>
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -563,6 +567,15 @@
                 duration: 5000
             });
         }
+    </script>
+
+    <script>
+        let headings = document.querySelectorAll('h1');
+        setInterval(() => {
+            for (let heading of headings) {
+                heading.classList.toggle('red')
+            }
+        }, 500)
     </script>
 </body>
 
